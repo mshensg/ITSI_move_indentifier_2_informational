@@ -3,6 +3,7 @@ from urllib3.exceptions import InsecureRequestWarning;
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning);
 
 server="----"
+cert_verify=False
 user=user
 password=password
 url="https://{}:8089/servicesNS/nobody/SA-ITOA/itoa_interface/entity".format(server)
@@ -15,7 +16,7 @@ params={
     }),
     "fields":"_key,title,identifier.fields,informational.fields"
 }
-response = requests.get(url,auth=(user,password),headers=headers,params=params,verify=False)
+response = requests.get(url,auth=(user,password),headers=headers,params=params,verify=cert_verify)
 results = response.json()
 
 bulk_job=[]
@@ -38,6 +39,6 @@ update_params={
 }
 
 update_data=json.dumps(bulk_job)
-response = requests.post(update_url,auth=(user,password),headers=headers,params=update_params,data=update_data,verify=False)
+response = requests.post(update_url,auth=(user,password),headers=headers,params=update_params,data=update_data,verify=cert_verify)
 print(response.json())
   
