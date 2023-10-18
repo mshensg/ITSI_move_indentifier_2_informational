@@ -3,8 +3,8 @@ from urllib3.exceptions import InsecureRequestWarning;
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning);
 
 server="----"
-user="----"
-password="----"
+user=user
+password=password
 url="https://{}:8089/servicesNS/nobody/SA-ITOA/itoa_interface/entity".format(server)
 headers = {"Content-Type":"application/json"}
 move_field = "-----"
