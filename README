@@ -1,1 +1,3 @@
 Script used to move an identifier (alias) field of ITSI entity to informational field
+
+vice versa should also work. just need to remove the item from informational and move it into identifier 
